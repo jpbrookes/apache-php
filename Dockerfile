@@ -1,5 +1,5 @@
 FROM ubuntu:trusty
-MAINTAINER Fernando Mayo <fernando@tutum.co>
+
 
 # Install base packages
 RUN apt-get update && \
@@ -29,7 +29,7 @@ ENV ALLOW_OVERRIDE **False**
 ADD run.sh /run.sh
 RUN chmod 755 /*.sh
 
-
+MAINTAINER Jon Brookes
 # Configure /app folder with sample app
 RUN mkdir -p /app && rm -fr /var/www/html && ln -s /app /var/www/html
 RUN cd ./app && git clone https://github.com/jpbrookes/php_app/
