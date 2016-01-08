@@ -22,6 +22,7 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf && \
     
 # Apache Config
 ADD apache2.conf /etc/apache2/apache2.conf
+ADD httpd.conf /etc/apache2/httpd.conf
 
 ENV ALLOW_OVERRIDE **False**
 
