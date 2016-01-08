@@ -19,12 +19,16 @@ RUN apt-get update && \
 RUN /usr/sbin/php5enmod mcrypt
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf && \
     sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php5/apache2/php.ini
+    
+# Apache Config
+ADD apache2.conf /etc/apache2/apache2.conf
 
 ENV ALLOW_OVERRIDE **False**
 
 # Add image configuration and scripts
 ADD run.sh /run.sh
 RUN chmod 755 /*.sh
+
 
 # Configure /app folder with sample app
 RUN mkdir -p /app && rm -fr /var/www/html && ln -s /app /var/www/html
