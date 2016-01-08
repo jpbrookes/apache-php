@@ -8,6 +8,9 @@ else
     a2enmod rewrite
 fi
 
+#!/bin/bash
+cd ./app && echo "git clone =) =) =) =) =) =) =) =) =)" && git clone https://github.com/jpbrookes/php_app/ && git pull origional master
+
 source /etc/apache2/envvars
 tail -F /var/log/apache2/* &
 exec apache2 -D FOREGROUND
